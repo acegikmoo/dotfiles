@@ -1,0 +1,18 @@
+# cache / junk
+*.log
+*.cache
+.cache/
+
+# secrets
+.env
+
+# node
+node_modules/
+
+# nvim
+nvim/.config/nvim/plugin
+nvim/.config/nvim/lazy
+
+# general cache
+*.cache
+.cache/

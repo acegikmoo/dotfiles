@@ -1,0 +1,80 @@
+/* User custom styles - Cyberpunk theme */
+
+window#waybar {
+    background-color: rgba(8, 20, 30, 0.85);
+    border-bottom: 1px solid rgba(0, 255, 180, 0.3);
+    box-shadow: 0 2px 20px rgba(0, 255, 150, 0.08);
+}
+
+/* Workspaces */
+#workspaces button {
+    color: rgba(150, 200, 190, 0.5);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0 10px;
+    margin: 2px 1px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    color: #FADA16;
+    border-bottom: 2px solid #FADA16;
+    background: rgba(250, 218, 22, 0.08);
+}
+
+#workspaces button:hover {
+    color: #00ffb4;
+    border-bottom: 2px solid #00ffb4;
+    background: rgba(0, 255, 180, 0.06);
+}
+
+/* Clock */
+#clock {
+    color: #00ffb4;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+/* System stats - CPU, temp, etc */
+#cpu, #temperature, #memory {
+    color: rgba(180, 220, 210, 0.75);
+}
+
+/* Battery */
+#battery {
+    color: #00ffb4;
+}
+
+#battery.warning {
+    color: #FADA16;
+}
+
+#battery.critical {
+    color: #ff4466;
+}
+
+/* Network */
+#network {
+    color: rgba(180, 220, 210, 0.75);
+}
+
+/* Tray */
+#tray {
+    padding: 0 6px;
+}
+
+/* Pulseaudio / volume */
+#pulseaudio {
+    color: rgba(180, 220, 210, 0.75);
+}
+
+#pulseaudio.muted {
+    color: rgba(150, 150, 150, 0.5);
+}
+
+/* Generic module hover */
+label:hover, button:hover {
+    color: #00ffb4;
+    transition: color 0.2s ease;
+}
