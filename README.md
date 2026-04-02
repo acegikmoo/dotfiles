@@ -1,6 +1,6 @@
-# Hyprland Dotfiles
+## Hyprland Dotfiles
 
-## Setup
+- OS: Arch Linux
 - WM: Hyprland
 - Bar: Waybar
 - Terminal: Kitty
