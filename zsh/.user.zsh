@@ -48,7 +48,7 @@ alias gch='git checkout'
 # alias vi='~/bin/kitty.sh'                                       #for nvim padding (custom neovim wrapper)
 alias vl='vi src/lib.rs'
 alias vm='vi src/main.rs'
-alias ss='source .zshrc'
+alias ss='source ~/.zshrc'
 
 # misc
 alias db='echo DATABASE_URL=postgresql://postgres:cupcake@localhost:5432/db'
