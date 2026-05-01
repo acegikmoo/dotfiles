@@ -68,7 +68,7 @@ alias vm='vi src/main.rs'
 
 alias db='echo DATABASE_URL=postgresql://postgres:cupcake@localhost:5432/db'
 alias xtree="tree -L 3 -I '.*|node_modules'"
-alias cmp='g++ -std=c++17 -O2 -Wall main.cpp -o a'
+alias comp='g++ -std=c++17 -O2 -Wall main.cpp -o a'
 alias gocp='cd ~/cp'
 
 

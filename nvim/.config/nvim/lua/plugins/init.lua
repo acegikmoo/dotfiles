@@ -179,19 +179,12 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    ft = {
-      "html",
-      "javascript",
-      "typescript",
-      "javascriptreact",
-      "typescriptreact",
-      "svelte",
-      "vue",
-    },
+    lazy = false,   -- remove the ft table entirely
     config = function()
       require("nvim-ts-autotag").setup()
     end,
   },
+
   -- Prisma support
   {
     "prisma/vim-prisma",
@@ -199,25 +192,17 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
     opts = {
       ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "tsx",
-        "c",
-        "cpp",
-        "rust",
-        "prisma",
+        "vim", "lua", "vimdoc",
+        "html", "css",
+        "javascript", "typescript", "tsx",
+        "c", "cpp", "rust", "prisma",
       },
-      -- CRITICAL: Enable Tree-sitter indentation
-      indent = {
-        enable = true,
-      },
+      highlight = { enable = true },
+      indent = { enable = true },
     },
   },
   {
