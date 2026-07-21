@@ -122,6 +122,25 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Python specific settings (disable smartindent, rely on custom indentexpr)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.expandtab = true
+    -- Custom indentexpr wrapping python#GetIndent to fix return ( hanging indent
+    vim.opt_local.indentexpr = "v:lua.require'custom.python_indent'.get_indent()"
+    vim.opt_local.smartindent = false
+    vim.opt_local.cindent = false
+    vim.opt_local.autoindent = true
+    -- Trigger reindent when typing ), ], } as first non-blank (not just at col 0)
+    vim.opt_local.indentkeys:append("=),=],=}")
+    -- Let autopairs handle <CR> inside brackets (splits into two lines with proper indent)
+  end,
+})
+
 -- TypeScript/JavaScript/JSX/TSX specific settings with TREE-SITTER indent
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact", "json", "jsonc" },

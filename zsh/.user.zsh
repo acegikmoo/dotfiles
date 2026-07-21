@@ -72,6 +72,9 @@ alias comp='g++ -std=c++17 -O2 -Wall main.cpp -o a'
 alias gocp='cd ~/cp'
 alias vpip='.venv/bin/pip'
 alias vpython='.venv/bin/python'
+alias killdiscord='pkill -9 -f Discord'
+alias note='obsidian'
+alias op='opencode'
 
 
 # ──────────────────────────────────────────────────────────

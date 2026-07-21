@@ -258,7 +258,7 @@ return {
         "python",
       },
       highlight = { enable = true },
-      indent = { enable = true },
+      indent = { enable = true, disable = { "python" } },
     },
   },
   {

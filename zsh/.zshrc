@@ -88,3 +88,6 @@ fi
 
 # Remove stack size limit (needed for cp on large files)
 ulimit -s unlimited
+
+# kimi-code
+export PATH="/home/acegikmo/.kimi-code/bin:$PATH"
