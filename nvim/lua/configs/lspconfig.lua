@@ -113,6 +113,9 @@ lspconfig.basedpyright.setup {
         autoImportCompletions = true,
         diagnosticMode = "workspace",
         useLibraryCodeForTypes = true,
+        diagnosticSeverityOverrides = {
+          reportPrivateImportUsage = "none",
+        },
       },
     },
   },
