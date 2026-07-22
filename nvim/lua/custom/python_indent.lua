@@ -1,27 +1,17 @@
 local api = vim.api
 local fn = vim.fn
 
-local STOP_KEYWORDS = { 'return', 'break', 'continue', 'raise', 'pass' }
-
 local OPEN_MAP = { [')'] = '(', [']'] = '[', ['}'] = '{' }
 
-local function hanging_after_stop_stmt(lnum)
+local function hanging_after_open_bracket(lnum)
   local plnum = fn.prevnonblank(lnum - 1)
   if plnum == 0 then
     return false
   end
   local line = (api.nvim_buf_get_lines(0, plnum - 1, plnum, false)[1] or '')
-  local trimmed = line:match('^%s*(.*)')
-  for _, kw in ipairs(STOP_KEYWORDS) do
-    if trimmed:sub(1, #kw) == kw then
-      local after = trimmed:sub(#kw + 1)
-      if after == '' or after:match('^%s') or after:match('^[%[%(]') then
-        local stripped = trimmed:gsub('#.*$', ''):gsub('%s+$', '')
-        if stripped:match('[([{]%s*$') then
-          return true
-        end
-      end
-    end
+  local stripped = line:gsub('#.*$', ''):gsub('%s+$', '')
+  if stripped:match('[([{]$') then
+    return true
   end
   return false
 end
@@ -58,7 +48,7 @@ return {
       return ci
     end
 
-    if hanging_after_stop_stmt(lnum) then
+    if hanging_after_open_bracket(lnum) then
       local plnum = fn.prevnonblank(lnum - 1)
       return fn.indent(plnum) + fn.shiftwidth()
     end
